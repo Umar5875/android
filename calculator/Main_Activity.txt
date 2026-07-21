@@ -1,0 +1,131 @@
+package com.example.calculatorapp;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+// MainActivity is the main screen of the application.
+public class MainActivity extends AppCompatActivity {
+    // Declare two EditText variables for number inputs.
+    EditText num1, num2;
+    // Declare four Button variables for arithmetic operations.
+    Button add, sub, mul, div;
+    // Declare a TextView variable to display the result.
+    TextView result;
+
+
+    // onCreate() is called automatically when the activity starts.
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        // Calls the parent class's onCreate() method.
+        super.onCreate(savedInstanceState);
+
+        // Sets the layout file (activity_main.xml) for this activity.
+        setContentView(R.layout.activity_main);
+
+        // Connect Java variable num1 with EditText having ID editTextNumber1.
+        num1 = findViewById(R.id.editTextNumber1);
+
+        // Connect Java variable num2 with EditText having ID editTextNumber2.
+        num2 = findViewById(R.id.editTextNumber2);
+
+        // Connect Java variable add with Add button.
+        add = findViewById(R.id.btnAdd);
+
+        // Connect Java variable sub with Subtract button.
+        sub = findViewById(R.id.btnSub);
+
+        // Connect Java variable mul with Multiply button.
+        mul = findViewById(R.id.btnMul);
+
+        // Connect Java variable div with Divide button.
+        div = findViewById(R.id.btnDiv);
+
+        // Connect Java variable result with TextView.
+        result = findViewById(R.id.txtResult);
+
+        // Set click event for Add button.
+        add.setOnClickListener(new View.OnClickListener() {
+
+            // Runs when Add button is clicked.
+            @Override
+            public void onClick(View v) {
+
+                // Read first number from EditText and convert it to integer.
+                int a = Integer.parseInt(num1.getText().toString());
+
+                // Read second number from EditText and convert it to integer.
+                int b = Integer.parseInt(num2.getText().toString());
+
+                // Add both numbers and display the result.
+                result.setText("Result: " + (a + b));
+            }
+        });
+
+        // Set click event for Subtract button.
+        sub.setOnClickListener(new View.OnClickListener() {
+
+            // Runs when Subtract button is clicked.
+            @Override
+            public void onClick(View v) {
+
+                // Read first number.
+                int a = Integer.parseInt(num1.getText().toString());
+
+                // Read second number.
+                int b = Integer.parseInt(num2.getText().toString());
+
+                // Subtract second number from first number.
+                result.setText("Result: " + (a - b));
+            }
+        });
+
+        // Set click event for Multiply button.
+        mul.setOnClickListener(new View.OnClickListener() {
+
+            // Runs when Multiply button is clicked.
+            @Override
+            public void onClick(View v) {
+
+                // Read first number.
+                int a = Integer.parseInt(num1.getText().toString());
+
+                // Read second number.
+                int b = Integer.parseInt(num2.getText().toString());
+
+                // Multiply both numbers.
+                result.setText("Result: " + (a * b));
+            }
+        });
+
+        // Set click event for Divide button.
+        div.setOnClickListener(new View.OnClickListener() {
+
+            // Runs when Divide button is clicked.
+            @Override
+            public void onClick(View v) {
+
+                // Read first number.
+                int a = Integer.parseInt(num1.getText().toString());
+
+                // Read second number.
+                int b = Integer.parseInt(num2.getText().toString());
+
+                // Check whether second number is not zero.
+                if (b != 0) {
+
+                    // Divide first number by second number.
+                    result.setText("Result: " + (a / b));
+
+                } else {
+
+                    // Display error message if divisor is zero.
+                    result.setText("Cannot divide by zero");
+                }
+            }
+        });
+    }
+}

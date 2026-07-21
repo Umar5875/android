@@ -1,0 +1,21 @@
+package com.example.login;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SecondActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Using activity_main for simplicity since we don't have activity_second
+        setContentView(R.layout.activity_main2);
+
+        Toast.makeText(this, "SecondActivity onCreate()", Toast.LENGTH_SHORT).show();
+        Log.d("LIFECYCLE", "SecondActivity onCreate()");
+    }
+}
+

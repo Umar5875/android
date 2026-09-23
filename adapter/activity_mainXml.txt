@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout android:layout_width="409dp"
+    android:layout_height="729dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="7dp"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListView
+        android:id="@+id/ls"
+        android:layout_width="match_parent"
+        android:layout_height="357dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:hint="enter first number"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="enter second number"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Divide" />
+
+</LinearLayout>
